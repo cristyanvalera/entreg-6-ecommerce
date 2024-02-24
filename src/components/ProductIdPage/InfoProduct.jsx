@@ -14,9 +14,17 @@ export const InfoProduct = ({ productId }) => {
     return (
         <div>
             <div>
-                <h2>{productId?.brand}</h2>
-                <h3>{productId?.title}</h3>
-                <p>{productId?.description}</p>
+                <h2 className="product-title">
+                    {productId?.brand}
+                </h2>
+                
+                <h3 className="product-title">
+                    {productId?.title}
+                </h3>
+                
+                <p className="product-description">
+                    {productId?.description}
+                </p>
             </div>
 
             <div>
