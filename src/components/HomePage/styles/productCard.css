@@ -1,0 +1,7 @@
+.product-card {
+    width: 250px;
+}
+.product-btns {
+    display: flex;
+    justify-content: space-evenly;
+}
