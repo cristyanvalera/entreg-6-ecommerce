@@ -19,6 +19,10 @@ export const HomePage = () => {
         setProductName(search.current.value.toLowerCase().trim());
     };
 
+    const filterByTitle = (prod) => {
+        return prod.title.toLowerCase().includes(productName);
+     };
+
     return (
         <div>
             <h1>Ecommerce</h1>
@@ -29,7 +33,7 @@ export const HomePage = () => {
 
             <section className="product-container">
                 {products
-                    ?.filter((p) => p.title.toLowerCase().includes(productName))
+                    ?.filter(filterByTitle)
                     .map(prod => (
                         <ProductCard key={prod.id} prod={prod} />
                     ))}
