@@ -1,6 +1,31 @@
 .product-card {
     width: 250px;
 }
+
+.productCard-img {
+    position: relative;
+    cursor: pointer;
+}
+
+.productCard-img img:last-child {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+.productCard-img:hover img:first-child {
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+.productCard-img:hover img:last-child {
+    opacity: 1;
+    transition: opacity .5s;
+}
+
 .product-btns {
     display: flex;
     justify-content: space-evenly;

@@ -8,8 +8,9 @@ export const ProductCard = ({ prod }) => {
     
     return (
         <article className="product-card">
-            <figure>
+            <figure className='productCard-img'>
                 <img src={prod.images[0].url} alt="product image" />
+                <img src={prod.images[1].url} alt="product image" />
             </figure>
             
             <div>
