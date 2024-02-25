@@ -17,7 +17,7 @@ export const ProductIdPage = () => {
 
     return (
         <div>
-            <h2>idProduct</h2>
+            <h2>Product</h2>
 
             <SliderImages images={productId?.images} />
 
