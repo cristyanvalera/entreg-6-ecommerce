@@ -5,13 +5,13 @@ import { ProductCard } from "../components/HomePage/ProductCard";
 import './styles/homePage.css';
 import { SelectCategory } from "../components/HomePage/SelectCategory";
 import { FormPrice } from "../components/HomePage/FormPrice";
-const body = document.querySelector('body');
 
 export const HomePage = () => {
     const [productName, setProductName] = useState('');
     const [selectValue, setSelectValue] = useState(0);
     const [formValue, setFormValue] = useState({ from: 0, to: Infinity });
-    
+    const body = document.querySelector('body');
+
     const products = useSelector(store => store.products);
     const dispatch = useDispatch();
     const search = useRef();
@@ -29,11 +29,11 @@ export const HomePage = () => {
         const { from, to } = formValue;
 
         let byName = prod.title.toLowerCase().includes(productName);
-        
+
         let byCategory = +selectValue === 0
             ? true
             : +selectValue === prod.categoryId;
-        
+
         let byPrice = +prod.price >= +from && +prod.price <= +to;
 
         return byName && byCategory && byPrice;
@@ -45,22 +45,26 @@ export const HomePage = () => {
 
     return (
         <div>
-            <h1>Ecommerce</h1>
+            <aside className="filter-container">
+                <button onClick={handleDark}>Dark mode</button>
 
-            <button onClick={handleDark}>Dark mode</button>
-            
-            <FormPrice setFormValue={setFormValue} />
+                <FormPrice setFormValue={setFormValue} />
 
-            <input type="text" ref={search} onChange={handleSearch} />
+                <div>
+                    <h3>By Name</h3>
 
-            <SelectCategory setSelectValue={setSelectValue} />
+                    <input type="text" ref={search} onChange={handleSearch} />
+                </div>
+
+                <SelectCategory setSelectValue={setSelectValue} />
+            </aside>
 
             <section className="product-container">
-                {products
-                    ?.filter(filterByTitle)
-                    .map(prod => (
+                {
+                    products?.filter(filterByTitle).map(prod => (
                         <ProductCard key={prod.id} prod={prod} />
-                    ))}
+                    ))
+                }
             </section>
         </div>
     );
