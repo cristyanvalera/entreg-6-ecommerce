@@ -3,6 +3,7 @@ import { InfoProduct } from "../components/ProductIdPage/InfoProduct";
 import { useFetch } from "../hooks/useFetch";
 import { useParams } from "react-router-dom";
 import { SimilarItems } from "../components/ProductIdPage/SimilarItems";
+import { SliderImages } from "../components/ProductIdPage/SliderImages";
 
 export const ProductIdPage = () => {
     const [productId, getProductId] = useFetch();
@@ -13,10 +14,12 @@ export const ProductIdPage = () => {
         
         getProductId(url);
     }, [param]);
-    
+
     return (
         <div>
             <h2>idProduct</h2>
+
+            <SliderImages images={productId?.images} />
 
             <InfoProduct productId={productId} />
 
