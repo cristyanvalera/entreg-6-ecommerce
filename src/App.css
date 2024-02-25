@@ -6,7 +6,7 @@
     padding: 0;
 }
 
-body {
+body.dark {
     background-color: #15202b;
     color: #f7f9f9;
 }
