@@ -3,4 +3,11 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
     gap: 2rem;
+    padding: 2rem;
+}
+
+.filter-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
