@@ -8,12 +8,14 @@ export const ProductCard = ({ prod }) => {
     
     return (
         <article className="product-card">
-            <figure className='productCard-img'>
+            <figure className='productCard-img' onClick={handleView}>
                 <img src={prod.images[0].url} alt="product image" />
                 <img src={prod.images[1].url} alt="product image" />
             </figure>
+
+            <hr />
             
-            <div>
+            <div className='productCard-info'>
                 <ul>
                     <li>
                         <span>{prod.brand}</span>
