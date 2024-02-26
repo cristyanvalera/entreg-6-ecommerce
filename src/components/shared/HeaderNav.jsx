@@ -1,7 +1,23 @@
+import './styles/headerNav.css';
+
 export const HeaderNav = () => {
     return (
-        <div>
-            <h1>Ecommerce Final</h1>
-        </div>
+        <nav className='navbar'>
+            <strong className='title'>e-commerce</strong>
+
+            <div className='btn-group'>
+                <button className='icon'>
+                    <box-icon name='user'></box-icon>
+                </button>
+
+                <button className='icon'>
+                    <box-icon name='box'></box-icon>
+                </button>
+                
+                <button className='icon'>
+                    <box-icon name='cart'></box-icon>
+                </button>
+            </div>
+        </nav>
     );
 };
