@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import { useAuth } from "../hooks/useAuth";
+import { Link } from "react-router-dom";
 
 export const LoginPage = () => {
     const { handleSubmit, register, reset } = useForm();
@@ -28,6 +29,10 @@ export const LoginPage = () => {
 
                 <button type="submit">Submit</button>
             </form>
+
+            <p>
+                If you are not registered, you can <Link to='/register'>register here.</Link>
+            </p>
         </div>
     )
 };

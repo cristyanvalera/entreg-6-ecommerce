@@ -1,23 +1,32 @@
+import { Link } from 'react-router-dom';
 import './styles/headerNav.css';
 
 export const HeaderNav = () => {
     return (
         <nav className='navbar'>
-            <strong className='title'>e-commerce</strong>
+            <Link to='/'>
+                <strong className='title'>e-commerce</strong>
+            </Link>
 
-            <div className='btn-group'>
-                <button className='icon'>
-                    <box-icon name='user'></box-icon>
-                </button>
+            <ul className='navbar-list'>
+                <li>
+                    <Link to='/login'>
+                        <box-icon name='user'></box-icon>
+                    </Link>
+                </li>
 
-                <button className='icon'>
-                    <box-icon name='box'></box-icon>
-                </button>
-                
-                <button className='icon'>
-                    <box-icon name='cart'></box-icon>
-                </button>
-            </div>
+                <li>
+                    <Link to='/purchases'>
+                        <box-icon name='box'></box-icon>
+                    </Link>
+                </li>
+
+                <li>
+                    <Link to='/cart'>
+                        <box-icon name='cart'></box-icon>
+                    </Link>
+                </li>
+            </ul>
         </nav>
     );
 };

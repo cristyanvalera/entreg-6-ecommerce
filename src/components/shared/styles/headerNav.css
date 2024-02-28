@@ -1,21 +1,14 @@
 .navbar {
-    height: 70px;
     display: flex;
-    margin-bottom: 2rem;
-}
-
-.navbar .fixed {
-    left: 0;
-    position: fixed;
-    right: 0;
-    top: 0;
-    z-index: 99;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1rem;
 }
 
 .navbar .title {
     color: var(--primary);
     display: block;
-    flex: 1 1;
     font-size: 1.5rem;
     font-weight: 700;
     padding: 14px 20px;
@@ -26,20 +19,8 @@
     }
 }
 
-.icon {
-    background: none;
-    border: none;
-    color: var(--text-gray);
-    font-size: 1.4rem;
-    line-height: 0;
-    padding: 14px;
-    text-align: center;
-    width: 15%;
-}
-
-.btn-group {
+.navbar-list {
     display: flex;
-    justify-content: space-around;
-    padding-inline-end: 2rem;
     gap: 2rem;
+    flex-wrap: wrap;
 }
