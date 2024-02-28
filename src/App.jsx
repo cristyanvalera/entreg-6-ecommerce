@@ -13,16 +13,14 @@ function App() {
         <div>
             <HeaderNav />
 
-            <div className='container'>
-                <Routes>
-                    <Route path='/' element={<HomePage />} />
-                    <Route path='/product/:id' element={<ProductIdPage />} />
-                    <Route path='/register' element={<RegisterPage />} />
-                    <Route path='/login' element={<LoginPage />} />
-                    <Route path='/cart' element={<CartPage />} />
-                    <Route path='/purchases' element={<Purchases />} />
-                </Routes>
-            </div>
+            <Routes>
+                <Route path='/' element={<HomePage />} />
+                <Route path='/product/:id' element={<ProductIdPage />} />
+                <Route path='/register' element={<RegisterPage />} />
+                <Route path='/login' element={<LoginPage />} />
+                <Route path='/cart' element={<CartPage />} />
+                <Route path='/purchases' element={<Purchases />} />
+            </Routes>
         </div>
     );
 }

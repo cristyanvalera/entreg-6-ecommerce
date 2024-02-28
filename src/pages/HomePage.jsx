@@ -45,19 +45,19 @@ export const HomePage = () => {
 
     return (
         <div>
-            <aside className="filter-container">
+            <div className="filter-container">
                 <button onClick={handleDark}>Dark mode</button>
 
                 <FormPrice setFormValue={setFormValue} />
-
+                
                 <div>
                     <h3>By Name</h3>
 
                     <input type="text" ref={search} onChange={handleSearch} />
                 </div>
-
+                
                 <SelectCategory setSelectValue={setSelectValue} />
-            </aside>
+            </div>
 
             <section className="product-container">
                 {
