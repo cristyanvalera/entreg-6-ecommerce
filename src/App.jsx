@@ -7,6 +7,7 @@ import { LoginPage } from './pages/LoginPage';
 import { CartPage } from './pages/CartPage';
 import { Purchases } from './pages/Purchases';
 import { HeaderNav } from './components/shared/HeaderNav';
+import { ProtectedRoutes } from './pages/ProtectedRoutes';
 
 function App() {
     return (
@@ -18,9 +19,13 @@ function App() {
                 <Route path='/product/:id' element={<ProductIdPage />} />
                 <Route path='/register' element={<RegisterPage />} />
                 <Route path='/login' element={<LoginPage />} />
-                <Route path='/cart' element={<CartPage />} />
-                <Route path='/purchases' element={<Purchases />} />
+
+                <Route element={<ProtectedRoutes />}>
+                    <Route path='/cart' element={<CartPage />} />
+                    <Route path='/purchases' element={<Purchases />} />
+                </Route>
             </Routes>
+
         </div>
     );
 }
