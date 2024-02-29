@@ -1,7 +1,10 @@
 import { useState } from "react";
+import { postCartThunk } from "../../store/slices/cart.slice";
+import { useDispatch } from "react-redux";
 
 export const InfoProduct = ({ productId }) => {
     const [quantity, setQuantity] = useState(1);
+    const dispatch = useDispatch();
 
     const handleLess = () => {
         if (quantity > 1) {
@@ -10,6 +13,15 @@ export const InfoProduct = ({ productId }) => {
     };
 
     const handlePlus = () => setQuantity(quantity + 1);
+
+    const handleAddToCart = () => {
+        dispatch(postCartThunk({
+            quantity: quantity,
+            productId: productId.id,
+        }));
+    };
+
+    console.log(productId);
 
     return (
         <div>
@@ -46,7 +58,8 @@ export const InfoProduct = ({ productId }) => {
                     </button>
                 </div>
             </div>
-            <button>Add to cart</button>
+
+            <button onClick={handleAddToCart}>Add to cart</button>
         </div>
     );
 };
