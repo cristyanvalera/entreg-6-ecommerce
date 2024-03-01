@@ -2,15 +2,27 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCartThunk } from "../store/slices/cart.slice";
 import { CartProducts } from "../components/CartPage/CartProducts";
+import { useAuth } from "../hooks/useAuth";
+import { getToken } from "../utils/getToken";
 
 export const CartPage = () => {
     const cart = useSelector(store => store.cart);
     const dispatch = useDispatch();
+    const createBuy = useAuth();
 
     useEffect(() => dispatch(getCartThunk()), []);
 
-    const getTotal = () => {
-        return cart?.reduce((acc, item) => acc + (item.quantity * item.product.price), 0); 
+    const handleTotal = () => {
+        return cart?.reduce(
+            (acc, item) => acc + (item.quantity * item.product.price),
+            0,
+        );
+    };
+
+    const handleBuy = () => {
+        let url = 'https://e-commerce-api-v2.academlo.tech/api/v1/purchases';
+
+        createBuy(url, '', getToken());
     };
 
     return (
@@ -23,8 +35,8 @@ export const CartPage = () => {
 
             <div>
                 {
-                    getTotal() !== 0
-                        ? <h3>Total buy: $ {getTotal()}</h3>
+                    handleTotal() !== 0
+                        ? <h3>Total buy: $ {handleTotal()}</h3>
                         : <p>No products in the shopping cart yet.</p>
                 }
             </div>
