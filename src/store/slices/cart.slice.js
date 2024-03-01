@@ -57,3 +57,15 @@ export const deleteCartThunk = (id) => (dispatch) => {
         })
         .catch(error => console.log(error));
 };
+
+export const updateCartThunk = (product, quantity) => (dispatch) => {
+    const data = {
+        quantity: product.quantity + quantity,
+    };
+
+    let url = `${urlBase}/${product.id}`;
+
+    axios.put(url, data, getToken())
+        .then(response => dispatch(updateCart(response.data)))
+        .catch(error => console.log(error));
+};
