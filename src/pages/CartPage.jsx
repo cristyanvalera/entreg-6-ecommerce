@@ -11,8 +11,6 @@ export const CartPage = () => {
         dispatch(getCartThunk());
     }, []);
 
-    console.log(cart);
-
     return (
         <div>
             {

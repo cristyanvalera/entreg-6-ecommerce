@@ -3,7 +3,6 @@ import '@splidejs/react-splide/css';
 import './styles/sliderImages.css';
 
 export const SliderImages = ({ images }) => {
-    console.log(images);
     return (
         <div>
             <Splide
