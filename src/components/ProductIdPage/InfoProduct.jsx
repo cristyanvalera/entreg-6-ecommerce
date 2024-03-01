@@ -16,9 +16,11 @@ export const InfoProduct = ({ productId }) => {
     const handlePlus = () => setQuantity(quantity + 1);
 
     const handleAddToCart = () => {
-        const item = cart.filter(prod => prod.productId === productId.id);
+        const item = cart.filter(
+            prod => prod.productId === productId.id,
+        );
 
-        if (item) {
+        if (item[0]) {
             dispatch(updateCartThunk(...item, quantity));
         } else {
             dispatch(postCartThunk({
