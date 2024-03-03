@@ -5,7 +5,7 @@ import { ProductIdPage } from './pages/ProductIdPage';
 import { RegisterPage } from './pages/RegisterPage';
 import { LoginPage } from './pages/LoginPage';
 import { CartPage } from './pages/CartPage';
-import { Purchases } from './pages/Purchases';
+import { PurchasesPage } from './pages/PurchasesPage';
 import { HeaderNav } from './components/shared/HeaderNav';
 import { ProtectedRoutes } from './pages/ProtectedRoutes';
 
@@ -22,7 +22,7 @@ function App() {
 
                 <Route element={<ProtectedRoutes />}>
                     <Route path='/cart' element={<CartPage />} />
-                    <Route path='/purchases' element={<Purchases />} />
+                    <Route path='/purchases' element={<PurchasesPage />} />
                 </Route>
             </Routes>
 
