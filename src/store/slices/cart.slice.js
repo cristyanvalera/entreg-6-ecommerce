@@ -64,7 +64,6 @@ export const updateCartThunk = (product, quantity) => (dispatch) => {
     };
 
     let url = `${urlBase}/${product.id}`;
-
     axios.put(url, data, getToken())
         .then(response => dispatch(updateCart(response.data)))
         .catch(error => console.log(error));
