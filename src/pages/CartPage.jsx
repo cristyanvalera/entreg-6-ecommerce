@@ -24,8 +24,6 @@ export const CartPage = () => {
         dispatch(setCart([]));
     };
 
-    console.log(cart);
-
     return (
         <div>
             {

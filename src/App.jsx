@@ -25,7 +25,6 @@ function App() {
                     <Route path='/purchases' element={<PurchasesPage />} />
                 </Route>
             </Routes>
-
         </div>
     );
 }
